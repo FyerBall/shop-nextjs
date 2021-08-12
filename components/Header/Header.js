@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 // comps.
 import Button from "../../layout/Button";
 import Greeting from "../Greeting";
@@ -6,20 +7,26 @@ import Greeting from "../Greeting";
 import { FaSearch } from "react-icons/fa";
 import { AiFillShop } from "react-icons/ai";
 import Category from "./Category";
+import { useAuth } from "../../store/authContext";
 
 function Header() {
-  let auth = false;
+  // let auth = false;
+  const { auth, login, logout, authReady } = useAuth();
+
+  const router = useRouter();
+  console.log("AUTH ===>", auth);
   return (
     <>
       {/* Nav bar */}
       <nav className=" flex items-center justify-between capitalize tracking-wider space-x-4 my-3 mb-7 md:px-20">
         {/* first - logo */}
         <div className=" flex items-center">
-          <Link href="/">
-            <a>
-              <AiFillShop size={50} className="mr-4" />
-            </a>
-          </Link>
+          <AiFillShop
+            size={50}
+            className="mr-4"
+            onClick={() => router.push("/")}
+          />
+
           <Link href="/seller">
             <a>
               <p className="cursor-pointer hover:underline ">Sell online</p>
@@ -37,16 +44,20 @@ function Header() {
           <FaSearch size={20} className="absolute right-3 text-blue-500" />
         </div>
         {/* last - cta */}
+
         <div className="">
           {auth ? (
-            <div className="bg-blue-500 flex items-center">
+            <div className=" flex items-center">
               <Greeting />
               <Button>my account</Button>
+              <Button onClick={logout}>logout</Button>
             </div>
           ) : (
             <div className="">
-              <Button>sign in</Button>
-              <Button bgColor="blue">sign up</Button>
+              <Button onClick={login}>sign in</Button>
+              <Button onClick={login} bgColor="blue">
+                sign up
+              </Button>
             </div>
           )}
         </div>

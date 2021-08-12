@@ -8,6 +8,7 @@ NProgress.configure({ showSpinner: false });
 
 import Router from "next/router";
 import nProgress from "nprogress";
+import { AuthContextProvider } from "../store/authContext";
 function MyApp({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(false);
   Router.events.on("routeChangeStart", (url) => {
@@ -22,7 +23,7 @@ function MyApp({ Component, pageProps }) {
     setIsLoading(false);
   });
   return (
-    <>
+    <AuthContextProvider>
       {/* ref. for responsive-ness */}
       <div className="bg-red-500 h-2 sm:bg-green-500 md:bg-blue-500 lg:bg-purple-500 xl:bg-yellow-500 2xl:bg-pink-500"></div>
       {isLoading && (
@@ -33,7 +34,7 @@ function MyApp({ Component, pageProps }) {
       <PageLayout>
         <Component {...pageProps} />
       </PageLayout>
-    </>
+    </AuthContextProvider>
   );
 }
 
