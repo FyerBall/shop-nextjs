@@ -31,9 +31,9 @@ function MyApp({ Component, pageProps }) {
     <Provider store={store}>
       <AuthContextProvider>
         {/* ref. for responsive-ness */}
-        <div className="bg-red-500 h-2 sm:bg-green-500 md:bg-blue-500 lg:bg-purple-500 xl:bg-yellow-500 2xl:bg-pink-500"></div>
+        <div className="bg-red-500 h-2 sm:bg-green-500 md:bg-gray-500 lg:bg-purple-500 xl:bg-yellow-500 2xl:bg-pink-500"></div>
         {isLoading && (
-          <p className="text-blue-500 text-lg fixed  bg-gray-900 bg-opacity-75 z-10 w-full text-center">
+          <p className="text-gray-500 text-lg fixed  bg-gray-900 bg-opacity-75 z-10 w-full text-center">
             loading...
           </p>
         )}

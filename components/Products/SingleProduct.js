@@ -7,7 +7,7 @@ import {
 
 function SingleProduct({ details }) {
   return (
-    <article className=" justify-center mx-auto border-2 p-3  rounded-lg shadow-md cursor-pointer border-blue-200 m-6  grid gap-4 grid-cols-3  hover:shadow-lg hover:border-blue-300 md:w-2/3 md:gap-1">
+    <article className=" justify-center mx-auto border-2 p-3  rounded-lg shadow-md cursor-pointer border-gray-200 m-6  grid gap-4 grid-cols-3  hover:shadow-lg hover:border-gray-300 md:w-2/3 md:gap-1">
       <div className="  mx-auto">
         <Image
           width={200}

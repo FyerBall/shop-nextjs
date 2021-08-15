@@ -8,7 +8,7 @@ function CartPage() {
   const { products } = useSelector((state) => state.cart);
 
   return (
-    <section className=" ">
+    <section className="">
       {products.length > 0 ? <CartItems /> : <EmptyCart />}
     </section>
   );

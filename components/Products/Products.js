@@ -2,7 +2,7 @@ import Product from "./Product";
 
 function Products({ products }) {
   return (
-    <div className="flex justify-center flex-wrap  overflow-hidden">
+    <div className="grid gap-8  md:grid-cols-3 md:grid-rows-3">
       {products.map((product) => (
         <Product key={product.id} {...product} />
       ))}

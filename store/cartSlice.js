@@ -17,10 +17,25 @@ export const cartSlice = createSlice({
         .reduce((a, b) => a + b);
       state.total = price.toFixed(2);
     },
+
+    removeFromCart: (state, action) => {
+      console.log(action);
+      let remove = state.products.filter(
+        (product) => product.id !== action.payload
+      );
+
+      let price = remove
+        .map((project) => project.price)
+        .reduce((b, a) => a + b, 0);
+      state.total = price.toFixed(2);
+
+      state.products = remove;
+      state.total = price;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeFromCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

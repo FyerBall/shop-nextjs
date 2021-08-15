@@ -23,32 +23,36 @@ function Product({ id, description, image, price, title }) {
   };
 
   return (
-    <article className="  border-2 p-3  rounded-lg shadow-md cursor-pointer border-gray-200 m-6  grid gap-12 grid-cols-1 w-96 hover:shadow-lg hover:border-blue-300 ">
-      <div className=" mx-auto">
+    <article className="mx-auto text-center">
+      <div className="">
         <Image
           src={image}
-          width={150}
-          height={210}
-          className=" bg-cover"
+          width={190}
+          height={360}
           alt={title}
+          objectFit="contain"
         />
       </div>
-      <div className=" h-56 flex flex-col justify-around">
+      <div className="text-left">
         <Link href={`product/${id}`}>
           <a>
-            <ProductTitle>{title.slice(0, 30)}...</ProductTitle>
+            <ProductTitle>{title.slice(0, 26)}...</ProductTitle>
           </a>
         </Link>
-        <ProductDescription>{description.slice(0, 60)}...</ProductDescription>
+        {/* <ProductDescription>{description.slice(0, 131)}...</ProductDescription> */}
 
-        <div className="flex item-center ">
-          <FaStar className="w-5 h-5 fill-current text-blue-700" />
-          <p className="text-sm font-semibold">{starts > 0 ? starts : "NEW"}</p>
-        </div>
-        <div className="flex item-center justify-between mt-3">
-          <p className="text-gray-700 font-bold text-xl">${price}</p>
+        <div className="">
+          <div className="flex item-center justify-between">
+            <p className="flex text-sm font-semibold">
+              <FaStar className="w-5 h-5 fill-current text-gray-700" />
+              {starts > 0 ? starts : "NEW"}
+            </p>
+            <p className="text-gray-700 font-bold ">${price}</p>
+          </div>
 
-          <Button onClick={addProductToCart}>Add to Card</Button>
+          <Button classes="w-full" onClick={addProductToCart}>
+            Add to Card
+          </Button>
         </div>
       </div>
     </article>
