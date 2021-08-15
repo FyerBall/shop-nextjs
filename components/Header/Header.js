@@ -8,22 +8,25 @@ import { FaSearch } from "react-icons/fa";
 import { AiFillShop } from "react-icons/ai";
 import Category from "./Category";
 import { useAuth } from "../../store/authContext";
+import { useSelector } from "react-redux";
 
 function Header() {
   // let auth = false;
   const { auth, login, logout, authReady } = useAuth();
 
+  // redux selector
+  const { products } = useSelector((state) => state.cart);
+
   const router = useRouter();
-  console.log("AUTH ===>", auth);
   return (
     <>
       {/* Nav bar */}
-      <nav className=" flex items-center justify-between capitalize tracking-wider space-x-4 my-3 mb-7 md:px-20">
+      <nav className="flex items-center sticky top-0 z-50 bg-white justify-between capitalize tracking-wider space-x-4 my-3 mb-7 md:px-20">
         {/* first - logo */}
         <div className=" flex items-center">
           <AiFillShop
             size={50}
-            className="mr-4"
+            className="mr-4 text-blue-500"
             onClick={() => router.push("/")}
           />
 
@@ -53,11 +56,24 @@ function Header() {
               <Button onClick={logout}>logout</Button>
             </div>
           ) : (
-            <div className="">
-              <Button onClick={login}>sign in</Button>
-              <Button onClick={login} bgColor="blue">
-                sign up
-              </Button>
+            <div className="flex list-none">
+              <Button onClick={login}>sign in / sign up</Button>
+              <li className="relative ">
+                <Button
+                  classes=""
+                  onClick={() => router.push("/cart")}
+                  bgColor="blue"
+                >
+                  Cart
+                </Button>
+                {products.length > 0 && (
+                  <span
+                    className={`absolute top-2 right-1 bg-blue-500  rounded-full h-5 w-5 text-center m-auto flex items-center justify-center p-1 text-gray-50 font-medium `}
+                  >
+                    {products.length}
+                  </span>
+                )}
+              </li>
             </div>
           )}
         </div>

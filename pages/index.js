@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import Header from "../components/Header/Header";
 import Products from "../components/Products/Products";
 
@@ -23,5 +22,9 @@ export async function getServerSideProps() {
   const response = await fetch("https://fakestoreapi.com/products");
   const data = await response.json();
 
-  return { props: { products: data } };
+  return {
+    props: {
+      products: data,
+    },
+  };
 }

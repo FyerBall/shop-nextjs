@@ -6,11 +6,24 @@ import {
   ProductTitle,
   ProductDescription,
 } from "../../layout/Products/ProductLayout";
+import { addToCart } from "../../store/cartSlice";
+import { useDispatch } from "react-redux";
 function Product({ id, description, image, price, title }) {
   let starts = Math.floor(Math.random() * 5);
+  const dispatch = useDispatch();
+  const addProductToCart = () => {
+    const product = {
+      id,
+      description,
+      image,
+      price,
+      title,
+    };
+    dispatch(addToCart(product));
+  };
 
   return (
-    <div className=" border-2 p-3  rounded-lg shadow-md cursor-pointer border-blue-200 m-6  grid gap-12 grid-cols-1 w-96 hover:shadow-lg hover:border-blue-300 ">
+    <article className="  border-2 p-3  rounded-lg shadow-md cursor-pointer border-gray-200 m-6  grid gap-12 grid-cols-1 w-96 hover:shadow-lg hover:border-blue-300 ">
       <div className=" mx-auto">
         <Image
           src={image}
@@ -35,10 +48,10 @@ function Product({ id, description, image, price, title }) {
         <div className="flex item-center justify-between mt-3">
           <p className="text-gray-700 font-bold text-xl">${price}</p>
 
-          <Button>Add to Card</Button>
+          <Button onClick={addProductToCart}>Add to Card</Button>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 
