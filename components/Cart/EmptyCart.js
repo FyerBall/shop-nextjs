@@ -5,10 +5,12 @@ import { useRouter } from "next/router";
 function EmptyCart() {
   const router = useRouter();
   return (
-    <div className="">
-      <Title>Your Cart is Empty</Title>
-      <Button onClick={() => router.push("/")}>shop</Button>
-    </div>
+    <section className="container mx-auto overflow-hidden flex-1 ">
+      <div className="flex items-center h-screen  flex-col justify-center  ">
+        <Title>Your Cart is Empty</Title>
+        <Button onClick={() => router.push("/")}>shop</Button>
+      </div>
+    </section>
   );
 }
 
