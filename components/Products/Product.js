@@ -2,10 +2,7 @@ import { FaStar } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../../layout/Button";
-import {
-  ProductTitle,
-  ProductDescription,
-} from "../../layout/Products/ProductLayout";
+import { ProductTitle } from "../../layout/Products/ProductLayout";
 import { addToCart } from "../../store/cartSlice";
 import { useDispatch } from "react-redux";
 function Product({ id, description, image, price, title }) {
