@@ -1,6 +1,6 @@
 # e-commerce
 
-DEMO 👉🏻 [Here](https://shop-nextjs-1klzw7l35-fyerball.vercel.app/)
+DEMO 👉🏻 [Here](https://shop-nextjs.vercel.app/)
 
 An e-commerce site that is using [FakeStoreAPI](https://fakestoreapi.com/) to generate pseudo data without running any server-side code, and Stripe API for the checkout process. The site is ~~using Netlify Identity for authentication~~ and Redux to manage the global state of the application.
 
