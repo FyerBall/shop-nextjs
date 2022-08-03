@@ -70,7 +70,7 @@ function CartItems() {
 
         {/* sidebar */}
         <article className=" text-center">
-          <ProductTitle>Checkout</ProductTitle>
+          <ProductTitle>Checkout with Stripe</ProductTitle>
           <Button onClick={createCheckoutSession} role="link">
             total ${total}
           </Button>

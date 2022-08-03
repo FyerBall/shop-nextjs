@@ -1,8 +1,8 @@
-# Nextjs, Stripe API, and [FakeStoreApi](https://fakestoreapi.com/)
+# e-commerce
 
 DEMO 👉🏻 [Here](https://shop-nextjs-1klzw7l35-fyerball.vercel.app/)
 
-NextJS application that uses Fake Store Api to display products and Stripe Api for the check out process. I used Netlify Identity for authentication.
+An e-commerce site that is using [FakeStoreAPI](https://fakestoreapi.com/) to generate pseudo data without running any server-side code, and Stripe API for the checkout process. The site is ~~using Netlify Identity for authentication~~ and Redux to manage the global state of the application.
 
 ## Setup
 

@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
 import { cls } from "../utils/cls.js";
+
 const classes = {
   base: "focus:outline-none transition ease-in-out duration-300 rounded",
   size: {
@@ -32,13 +33,13 @@ const Button = forwardRef(
     <button
       ref={ref}
       type={type}
+      {...props}
       className={cls(`
     ${classes.base}
     ${classes.size[size]}
     ${classes.variant[variant]}
     ${className}
     `)}
-      {...props}
     >
       {children}
     </button>
@@ -46,3 +47,4 @@ const Button = forwardRef(
 );
 
 export default Button;
+Button.displayName = "Button";
