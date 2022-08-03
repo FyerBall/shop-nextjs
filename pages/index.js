@@ -13,12 +13,11 @@ export default function Home({ products }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className=" h-screen">
+      <main className="h-screen">
         <Hero />
+        <Category />
+        <Products products={products} />
       </main>
-
-      <Category />
-      <Products products={products} />
     </div>
   );
 }

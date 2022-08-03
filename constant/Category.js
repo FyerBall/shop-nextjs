@@ -11,30 +11,30 @@ import {
 export const category = [
   {
     name: "clothes",
-    Icon: <FaTshirt />,
+    Icon: <FaTshirt size={20} />,
   },
   {
     name: "shoes",
-    Icon: <FaShoePrints />,
+    Icon: <FaShoePrints size={20} />,
   },
   {
     name: "music",
-    Icon: <FaMusic />,
+    Icon: <FaMusic size={20} />,
   },
   {
     name: "life style",
-    Icon: <FaHardHat />,
+    Icon: <FaHardHat size={20} />,
   },
   {
     name: "sports",
-    Icon: <FaRunning />,
+    Icon: <FaRunning size={20} />,
   },
   {
     name: "shoes",
-    Icon: <FaShoePrints />,
+    Icon: <FaShoePrints size={20} />,
   },
   {
     name: "pet",
-    Icon: <FaCat />,
+    Icon: <FaCat size={20} />,
   },
 ];
