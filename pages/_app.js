@@ -8,7 +8,7 @@ import { Provider } from "react-redux";
 import { store } from "../store/";
 
 // styles
-import PageLayout from "../layout/PageLayout/PageLayout";
+import Layout from "../layout/Layout";
 import "../styles/globals.css";
 
 // n progress to show progress bar at the top when the page is loading
@@ -35,9 +35,9 @@ function MyApp({ Component, pageProps }) {
             loading...
           </p>
         )}
-        <PageLayout>
+        <Layout>
           <Component {...pageProps} />
-        </PageLayout>
+        </Layout>
       </AuthContextProvider>
     </Provider>
   );

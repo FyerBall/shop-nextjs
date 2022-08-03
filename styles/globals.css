@@ -6,3 +6,8 @@
   font-family: "Poppins";
   src: url(./fonts/Poppins/Poppins-Regular.ttf);
 }
+@font-face {
+  font-family: "Quicksand";
+  src: url(./fonts/Quicksand/Quicksand-VariableFont_wght.ttf);
+}
+

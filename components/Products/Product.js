@@ -2,7 +2,10 @@ import { FaStar } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../../layout/Button";
-import { ProductTitle } from "../../layout/Products/ProductLayout";
+import {
+  ProductDescription,
+  ProductTitle,
+} from "../../layout/Products/ProductLayout";
 import { addToCart } from "../../store/cartSlice";
 import { useDispatch } from "react-redux";
 function Product({ id, description, image, price, title }) {
@@ -20,8 +23,8 @@ function Product({ id, description, image, price, title }) {
   };
 
   return (
-    <article className="mx-auto text-center">
-      <div className="">
+    <article className="mx-auto text-left container space-y-5 relative shadow-lg border-gray-300 pb-5 hover:shadow-md cursor-pointer">
+      <div className="text-center">
         <Image
           src={image}
           width={190}
@@ -30,27 +33,21 @@ function Product({ id, description, image, price, title }) {
           objectFit="contain"
         />
       </div>
-      <div className="text-left">
+      <h2 className="mt-2 font-semibold text-black truncate"> {title}</h2>
+      <p className="text-black font-black text-2xl">${price}</p>
+      <p className="line-clamp-3">{description}</p>
+
+      <div className="flex items-center justify-between">
+        <p className="flex text-sm font-semibold">
+          <FaStar className="w-5 h-5 fill-current text-gray-700" />
+          {starts > 0 ? starts : "NEW"}
+        </p>
         <Link href={`product/${id}`}>
-          <a>
-            <ProductTitle>{title.slice(0, 26)}...</ProductTitle>
-          </a>
+          <a className=" inset-0 absolute"></a>
         </Link>
-        {/* <ProductDescription>{description.slice(0, 131)}...</ProductDescription> */}
-
-        <div className="">
-          <div className="flex item-center justify-between">
-            <p className="flex text-sm font-semibold">
-              <FaStar className="w-5 h-5 fill-current text-gray-700" />
-              {starts > 0 ? starts : "NEW"}
-            </p>
-            <p className="text-gray-700 font-bold ">${price}</p>
-          </div>
-
-          <Button classes="w-full" onClick={addProductToCart}>
-            Add to Card
-          </Button>
-        </div>
+        <Button className="z-10" onClick={addProductToCart}>
+          Add to Card
+        </Button>
       </div>
     </article>
   );
