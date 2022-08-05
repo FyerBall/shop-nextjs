@@ -53,7 +53,8 @@ function Header() {
           ) : ( */}
           <ul className="flex items-center list-none space-x-4">
             <Button
-            //  onClick={login}
+              //  onClick={login}
+              variant="primary"
             >
               Sign In
             </Button>
@@ -62,7 +63,8 @@ function Header() {
               onClick={() => router.push("/cart")}
             >
               <Button
-              //  onClick={login}
+                //  onClick={login}
+                variant="primary"
               >
                 My cart
               </Button>
