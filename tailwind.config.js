@@ -1,12 +1,14 @@
+const colors = {
+  alpha: "#2264D1",
+  beta: "#9DC2FF",
+};
+
 module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      colors: {
-        alpha: "#2264D1",
-        beta: "#9DC2FF",
-      },
+      colors: { ...colors },
 
       zIndex: {
         "-10": "-10",
